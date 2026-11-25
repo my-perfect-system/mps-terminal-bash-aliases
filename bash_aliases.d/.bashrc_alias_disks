@@ -5,3 +5,4 @@
 # diskinfo
 alias fs='df -h | head -n1 ; df -h | tail -n +2 | sort -k1,5'
 alias sdf='sudo df -h | head -n 1 ; sudo df -h | tail -n +2 | sort -k 6'
+alias info-fs='df -h | head -n1 ; df -h | tail -n +2 | sort -k1,5'

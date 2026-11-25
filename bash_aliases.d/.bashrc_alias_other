@@ -10,15 +10,14 @@ alias aa='sudo aa-status'
 alias aa-enforce-all='sudo aa-enforce /etc/apparmor.d/*'
 alias aa-complain-all='sudo aa-complain /etc/apparmor.d/*'
 
-# systemctl
-alias sdr='systemctl daemon-reload'
-alias syss='systemctl status'
-alias sysup='systemctl start'
-alias sysdown='systemctl stop'
-alias sysre='systemctl restart'
-
 # xset keyboard rate
 alias xx='xset r rate 250 50'
+
+# zram info
+alias info-zram='sudo zramctl'
+
+# kitty icat
+alias icat='kitty +kitten icat --align=center --scale-up'
 
 # say something with espeak
 alias cowsay-en='cowsay $(fortune)'

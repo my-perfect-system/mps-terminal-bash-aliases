@@ -2,10 +2,16 @@
 
 # shellcheck disable=SC2139,SC2015,SC2142,SC2154
 
-# apt
-alias pas='apt search'
+# apt-based
+alias paq='apt search'
 alias pai='sudo apt install'
 alias par='sudo apt remove'
 alias pauu='sudo apt update && sudo apt upgrade && sudo apt autoremove'
 alias cmmi='./configure && make && sudo make install'
 
+# dnf-based
+alias pdq='dnf search'
+alias pdi='sudo dnf install'
+alias pdr='sudo dnf remove'
+alias pduu='sudo dnf update && sudo dnf upgrade'
+alias cmmi='./configure && make && sudo make install'

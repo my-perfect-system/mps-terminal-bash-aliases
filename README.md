@@ -2,8 +2,8 @@
 
 System-wide bash aliases of the [my-perfect-system](https://github.com/my-perfect-system) (mps) terminal stack.
 
-Each topic lives in its own `.bashrc_alias_<topic>` file. The main bash
-configuration ([mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash))
+Each topic lives in its own `.bashrc_alias_<topic>` file in [`bash_aliases.d/`](bash_aliases.d).
+The main bash configuration ([mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash))
 sources every `/etc/bash_aliases.d/.bashrc_alias_*` file alphabetically,
 then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 
@@ -41,6 +41,6 @@ v file.txt                       # open in nvim
 ## Creating new aliases
 
 ```bash
-echo "alias ll='eza -la --git'" > .bashrc_alias_ls2   # new .bashrc_alias_<topic>
-                                                     # file in the repo
+echo "alias ll='eza -la --git'" > bash_aliases.d/.bashrc_alias_ls2   # new
+                                                     # .bashrc_alias_<topic> file
 ```

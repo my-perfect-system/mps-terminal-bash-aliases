@@ -10,6 +10,7 @@ alias tks="tmux kill-server"
 alias tkss="tmux kill-session -t "
 alias muxme="~/mps/snippets/launch_tmux.bash"
 alias muxme-matrix="~/mps/snippets/launch_tmux.bash 'hm && ho'"
+alias info-tmux="tmux ls"
 
 # tmuxinator
 alias tx="tmuxinator"

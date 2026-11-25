@@ -4,12 +4,13 @@ set -euo pipefail
 
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEST="/etc/bash_aliases.d"
+ALIASES_SRC="${SRC}/bash_aliases.d"
 
 SUDO=""
 [[ ${EUID} -eq 0 ]] || SUDO="sudo"
 
 ${SUDO} install -d -m 0755 "${DEST}"
-for f in "${SRC}"/.bashrc_alias_*; do
+for f in "${ALIASES_SRC}"/.bashrc_alias_*; do
   [[ -e "${f}" ]] || continue
   ${SUDO} install -m 0644 "${f}" "${DEST}/$(basename "${f}")"
 done
