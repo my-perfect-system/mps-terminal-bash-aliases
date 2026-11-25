@@ -4,9 +4,6 @@
 
 MPSDIR="/opt/mps"
 
-# source bash
-alias sb='source ~/.bashrc'
-
 # xset
 alias xx='xset r rate 250 50'
 

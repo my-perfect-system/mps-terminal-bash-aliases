@@ -2,10 +2,6 @@
 
 # shellcheck disable=SC2139,SC2015,SC2142,SC2154
 
-# source bash
-alias sb='source ~/.bashrc'
-alias bash-reload='source ~/.bashrc'
-
 alias whichalias='alias | grep '
 # Random
 alias h='history'

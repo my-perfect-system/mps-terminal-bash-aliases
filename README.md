@@ -49,7 +49,6 @@ sources `/etc/bash_aliases.d/.bashrc_alias_*`).
 ```bash
 pai htop                         # sudo apt install htop
 pauu                             # apt update && upgrade && autoremove
-sb                               # source ~/.bashrc
 v file.txt                       # open in nvim
 mpsrepo                          # zoxide jump to the mps repo dir
 ```
