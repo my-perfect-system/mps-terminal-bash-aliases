@@ -43,3 +43,13 @@ sources `/etc/bash_aliases.d/.bashrc_alias_*`).
 `editor` `espidf` `eza` `filemanager` `files` `fzf` `git` `info`
 `lmstudio` `ls` `mount` `mps` `net` `opencode` `other` `packages`
 `python` `run` `skeletons` `ssh` `systemd` `terminal` `tmux` `umi` `zoxide`
+
+## Examples
+
+```bash
+pai htop                         # sudo apt install htop
+pauu                             # apt update && upgrade && autoremove
+sb                               # source ~/.bashrc
+v file.txt                       # open in nvim
+mpsrepo                          # zoxide jump to the mps repo dir
+```
