@@ -7,6 +7,16 @@ configuration ([mps-terminal-bash](https://github.com/my-perfect-system/mps-term
 sources every `/etc/bash_aliases.d/.bashrc_alias_*` file alphabetically,
 then the optional per-user override `~/.config/bashrc/.bashrc_alias_custom`.
 
+## Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
+```
+
+Clones the repo to `${XDG_DATA_HOME:-$HOME/.local/share}/mps/mps-terminal-bash-aliases`
+and runs [`install.sh`](install.sh) (uses `sudo` for `/etc/bash_aliases.d`; the
+password prompt reads the terminal, not the pipe). Re-run to update.
+
 ## Topics
 
 `ansi` `ansible` `batcat` `cfg` `common` `directories` `disks` `docker`
