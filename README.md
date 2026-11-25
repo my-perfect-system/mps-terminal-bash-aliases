@@ -18,7 +18,9 @@ Clones the repo to the system-wide mps repo dir
 `odem.terminal.bash` role manages — and runs [`install.sh`](install.sh),
 which copies the alias files to `/etc/bash_aliases.d/` with `sudo` (the
 password prompt reads the terminal, not the pipe). One clone per host: every
-user can run the same command. Re-run it to update.
+user can run the same command. Re-run it to update. The clone location defaults
+to `REPO_DIR_DEFAULT` in [`bootstrap.sh`](bootstrap.sh) (override per
+invocation with the `MPS_REPO_DIR` env var).
 
 ## Topics
 

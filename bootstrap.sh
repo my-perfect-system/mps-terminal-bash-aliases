@@ -6,11 +6,15 @@
 # password prompt reads the terminal tty, not the curl pipe).
 set -euo pipefail
 
+#--- Repo configuration -------------------------------------------------------
 REPO_NAME="mps-terminal-bash-aliases"
 REPO_URL="https://github.com/my-perfect-system/${REPO_NAME}.git"
-# System-wide mps repo dir — one clone per host, shared by every user and by
-# the odem.terminal.bash ansible role (identity_default_repo_dir_mps).
-REPO_DIR="${MPS_REPO_DIR:-/srv/repo/github/my-perfect-system}"
+# Default system-wide mps repo dir — one clone per host, shared by every user
+# and by the odem.terminal.bash ansible role (identity_default_repo_dir_mps).
+# Override per invocation with the MPS_REPO_DIR env var.
+REPO_DIR_DEFAULT="/srv/repo/github/my-perfect-system"
+
+REPO_DIR="${MPS_REPO_DIR:-${REPO_DIR_DEFAULT}}"
 DEST="${REPO_DIR}/${REPO_NAME}"
 
 # The system repo dir is root-owned; clone/pull need elevation as a user.
