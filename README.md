@@ -22,14 +22,13 @@ user can run the same command. Re-run it to update. The clone location defaults
 to `REPO_DIR_DEFAULT` in [`bootstrap.sh`](bootstrap.sh) (override per
 invocation with the `MPS_REPO_DIR` env var).
 
-## Topics
+## Install Ansible
 
-`ansi` `ansible` `batcat` `cfg` `common` `directories` `disks` `docker`
-`editor` `espidf` `eza` `filemanager` `files` `fzf` `git` `info`
-`lmstudio` `ls` `mount` `mps` `net` `opencode` `other` `packages`
-`python` `run` `skeletons` `ssh` `systemd` `terminal` `tmux` `umi` `zoxide`
+Installed by the `odem.terminal.bash` role of the
+[odem-terminal](https://github.com/my-perfect-system/odem-terminal) collection,
+which clones this repository and copies the alias files to `/etc/bash_aliases.d/`.
 
-## Standalone install
+## Install Standalone
 
 ```bash
 sudo ./install.sh    # copies .bashrc_alias_* to /etc/bash_aliases.d/; idempotent
@@ -38,8 +37,9 @@ sudo ./install.sh    # copies .bashrc_alias_* to /etc/bash_aliases.d/; idempoten
 Requires the `mps-terminal-bash` bash configuration (or any `.bashrc` that
 sources `/etc/bash_aliases.d/.bashrc_alias_*`).
 
-## Ansible install
+## Topics
 
-Installed by the `odem.terminal.bash` role of the
-[odem-terminal](https://github.com/my-perfect-system/odem-terminal) collection,
-which clones this repository and copies the alias files to `/etc/bash_aliases.d/`.
+`ansi` `ansible` `batcat` `cfg` `common` `directories` `disks` `docker`
+`editor` `espidf` `eza` `filemanager` `files` `fzf` `git` `info`
+`lmstudio` `ls` `mount` `mps` `net` `opencode` `other` `packages`
+`python` `run` `skeletons` `ssh` `systemd` `terminal` `tmux` `umi` `zoxide`
