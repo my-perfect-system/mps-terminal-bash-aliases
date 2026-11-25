@@ -9,16 +9,23 @@ then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 
 ## Install
 
-| Method | Command |
+| Method | Description |
 |---|---|
-| Default | `curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh \| bash` |
-| Ansible | role `odem.terminal.bash` of [odem-terminal](https://github.com/my-perfect-system/odem-terminal) |
-| Standalone | `sudo ./install.sh` |
+| Default | `bootstrap.sh` clones to the system-wide mps repo dir and runs `install.sh` (sudo) |
+| Ansible | Included in role `odem.terminal.bash` of [odem-terminal](https://github.com/my-perfect-system/odem-terminal) |
+| Standalone | plain `install.sh`, no network needed (sudo) |
+
+```bash
+# Default
+curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
+
+# Standalone
+sudo ./install.sh
+```
 
 All methods copy the `.bashrc_alias_*` files to `/etc/bash_aliases.d/` (the sudo
-password prompt reads the terminal, so `curl | bash` works). Requires
-[mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash) or
-any `.bashrc` that sources `/etc/bash_aliases.d/.bashrc_alias_*`.
+prompt reads the terminal, so `curl | bash` works). Requires
+[mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash).
 
 ## Topics
 
@@ -33,7 +40,6 @@ any `.bashrc` that sources `/etc/bash_aliases.d/.bashrc_alias_*`.
 pai htop                         # sudo apt install htop
 pauu                             # apt update && upgrade && autoremove
 v file.txt                       # open in nvim
-mpsrepo                          # zoxide jump to the mps repo dir
 ```
 
 ## Creating new aliases
@@ -41,8 +47,4 @@ mpsrepo                          # zoxide jump to the mps repo dir
 ```bash
 echo "alias ll='eza -la --git'" > .bashrc_alias_ls2   # new .bashrc_alias_<topic>
                                                      # file in the repo
-git add .bashrc_alias_ls2 && git commit -m "Add ls2 aliases" && git push
-curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
-                                                     # redeploy: pulls the clone,
-                                                     # copies to /etc/bash_aliases.d
 ```
