@@ -9,35 +9,16 @@ then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 
 ## Install
 
-### Default
+| Method | Command |
+|---|---|
+| Default | `curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh \| bash` |
+| Ansible | role `odem.terminal.bash` of [odem-terminal](https://github.com/my-perfect-system/odem-terminal) |
+| Standalone | `sudo ./install.sh` |
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
-```
-
-Clones the repo to the system-wide mps repo dir
-`${MPS_REPO_DIR:-/srv/repo/github/my-perfect-system}` — the same clone the
-`odem.terminal.bash` role manages — and runs [`install.sh`](install.sh),
-which copies the alias files to `/etc/bash_aliases.d/` with `sudo` (the
-password prompt reads the terminal, not the pipe). One clone per host: every
-user can run the same command. Re-run it to update. The clone location defaults
-to `REPO_DIR_DEFAULT` in [`bootstrap.sh`](bootstrap.sh) (override per
-invocation with the `MPS_REPO_DIR` env var).
-
-### Ansible
-
-Installed by the `odem.terminal.bash` role of the
-[odem-terminal](https://github.com/my-perfect-system/odem-terminal) collection,
-which clones this repository and copies the alias files to `/etc/bash_aliases.d/`.
-
-### Standalone
-
-```bash
-sudo ./install.sh    # copies .bashrc_alias_* to /etc/bash_aliases.d/; idempotent
-```
-
-Requires the `mps-terminal-bash` bash configuration (or any `.bashrc` that
-sources `/etc/bash_aliases.d/.bashrc_alias_*`).
+All methods copy the `.bashrc_alias_*` files to `/etc/bash_aliases.d/` (the sudo
+password prompt reads the terminal, so `curl | bash` works). Requires
+[mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash) or
+any `.bashrc` that sources `/etc/bash_aliases.d/.bashrc_alias_*`.
 
 ## Topics
 
