@@ -52,4 +52,7 @@ pauu                             # apt update && upgrade && autoremove
 sb                               # source ~/.bashrc
 v file.txt                       # open in nvim
 mpsrepo                          # zoxide jump to the mps repo dir
+cfg-bashrc                       # edit ~/.bashrc, then re-source it
+cfg-alias-common                 # sudo vim /etc/bash_aliases.d (pick a file), re-source
+cfg-alias-custom                 # edit ~/.config/bash_aliases.d, re-source
 ```
