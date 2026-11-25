@@ -13,9 +13,12 @@ then the optional per-user override `~/.config/bashrc/.bashrc_alias_custom`.
 curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
 ```
 
-Clones the repo to `${XDG_DATA_HOME:-$HOME/.local/share}/mps/mps-terminal-bash-aliases`
-and runs [`install.sh`](install.sh) (uses `sudo` for `/etc/bash_aliases.d`; the
-password prompt reads the terminal, not the pipe). Re-run to update.
+Clones the repo to the system-wide mps repo dir
+`${MPS_REPO_DIR:-/srv/repo/github/my-perfect-system}` — the same clone the
+`odem.terminal.bash` role manages — and runs [`install.sh`](install.sh),
+which copies the alias files to `/etc/bash_aliases.d/` with `sudo` (the
+password prompt reads the terminal, not the pipe). One clone per host: every
+user can run the same command. Re-run it to update.
 
 ## Topics
 

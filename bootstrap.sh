@@ -1,21 +1,32 @@
 #!/usr/bin/env bash
-# Bootstrap mps-terminal-bash-aliases: clone to ~/.local/share/mps and run install.sh.
+# Bootstrap mps-terminal-bash-aliases: clone/update the system-wide mps repo dir, run install.sh.
 # Standalone usage:
 #   curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
-# Needs sudo for /etc/bash_aliases.d — the password prompt reads the terminal
-# tty, not the curl pipe, so `curl | bash` works unchanged.
+# install.sh deploys to /etc/bash_aliases.d (system-wide, uses sudo; the
+# password prompt reads the terminal tty, not the curl pipe).
 set -euo pipefail
 
 REPO_NAME="mps-terminal-bash-aliases"
 REPO_URL="https://github.com/my-perfect-system/${REPO_NAME}.git"
-DEST="${XDG_DATA_HOME:-$HOME/.local/share}/mps/${REPO_NAME}"
+# System-wide mps repo dir — one clone per host, shared by every user and by
+# the odem.terminal.bash ansible role (identity_default_repo_dir_mps).
+REPO_DIR="${MPS_REPO_DIR:-/srv/repo/github/my-perfect-system}"
+DEST="${REPO_DIR}/${REPO_NAME}"
+
+# The system repo dir is root-owned; clone/pull need elevation as a user.
+# sudo prompts read the terminal tty, not the curl pipe.
+SUDO=""
+[[ ${EUID} -eq 0 ]] || SUDO="sudo"
 
 if [ -d "${DEST}/.git" ]; then
     echo "==> Updating ${DEST}"
-    git -C "${DEST}" pull --ff-only
+    # Users without sudo rights keep the clone an admin installed.
+    ${SUDO} git -C "${DEST}" pull --ff-only || echo "==> Pull failed, keeping existing clone"
 else
     echo "==> Cloning ${REPO_URL}"
-    git clone --depth 1 "${REPO_URL}" "${DEST}"
+    ${SUDO} install -d -m 0755 "${REPO_DIR}"
+    ${SUDO} git clone --depth 1 "${REPO_URL}" "${DEST}"
 fi
 
+# install.sh runs as the invoking user (sudo inside only for /etc).
 exec bash "${DEST}/install.sh"
