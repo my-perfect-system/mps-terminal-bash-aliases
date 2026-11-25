@@ -5,7 +5,7 @@ System-wide bash aliases of the [my-perfect-system](https://github.com/my-perfec
 Each topic lives in its own `.bashrc_alias_<topic>` file. The main bash
 configuration ([mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash))
 sources every `/etc/bash_aliases.d/.bashrc_alias_*` file alphabetically,
-then the optional per-user override `~/.config/bashrc/.bashrc_alias_custom`.
+then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 
 ## Install
 
