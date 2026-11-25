@@ -24,13 +24,6 @@ All methods copy the `.bashrc_alias_*` files to `/etc/bash_aliases.d/` (the sudo
 prompt reads the terminal, so `curl | bash` works). Requires
 [mps-terminal-bash](https://github.com/my-perfect-system/mps-terminal-bash).
 
-## Topics
-
-`ansi` `ansible` `batcat` `cfg` `common` `directories` `disks` `docker`
-`editor` `espidf` `eza` `filemanager` `files` `fzf` `git` `info`
-`lmstudio` `ls` `mount` `mps` `net` `opencode` `other` `packages`
-`python` `run` `skeletons` `ssh` `systemd` `terminal` `tmux` `umi` `zoxide`
-
 ## Usage
 
 ```bash
