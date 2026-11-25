@@ -9,6 +9,8 @@ then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 
 ## Install
 
+### Default
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
 ```
@@ -22,13 +24,13 @@ user can run the same command. Re-run it to update. The clone location defaults
 to `REPO_DIR_DEFAULT` in [`bootstrap.sh`](bootstrap.sh) (override per
 invocation with the `MPS_REPO_DIR` env var).
 
-## Install Ansible
+### Ansible
 
 Installed by the `odem.terminal.bash` role of the
 [odem-terminal](https://github.com/my-perfect-system/odem-terminal) collection,
 which clones this repository and copies the alias files to `/etc/bash_aliases.d/`.
 
-## Install Standalone
+### Standalone
 
 ```bash
 sudo ./install.sh    # copies .bashrc_alias_* to /etc/bash_aliases.d/; idempotent
