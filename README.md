@@ -16,6 +16,7 @@ then any per-user overrides from `~/.config/bash_aliases.d/.bashrc_alias_*`.
 | Standalone | run `sudo ./install.sh`; no network needed |
 
 ```bash
+# Install (Default)
 curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
 ```
 
