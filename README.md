@@ -44,7 +44,7 @@ sources `/etc/bash_aliases.d/.bashrc_alias_*`).
 `lmstudio` `ls` `mount` `mps` `net` `opencode` `other` `packages`
 `python` `run` `skeletons` `ssh` `systemd` `terminal` `tmux` `umi` `zoxide`
 
-## Examples
+## Usage
 
 ```bash
 pai htop                         # sudo apt install htop
@@ -52,4 +52,15 @@ pauu                             # apt update && upgrade && autoremove
 sb                               # source ~/.bashrc
 v file.txt                       # open in nvim
 mpsrepo                          # zoxide jump to the mps repo dir
+```
+
+## Creating new aliases
+
+```bash
+echo "alias ll='eza -la --git'" > .bashrc_alias_ls2   # new .bashrc_alias_<topic>
+                                                     # file in the repo
+git add .bashrc_alias_ls2 && git commit -m "Add ls2 aliases" && git push
+curl -fsSL https://raw.githubusercontent.com/my-perfect-system/mps-terminal-bash-aliases/main/bootstrap.sh | bash
+                                                     # redeploy: pulls the clone,
+                                                     # copies to /etc/bash_aliases.d
 ```
