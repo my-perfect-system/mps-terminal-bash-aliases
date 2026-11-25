@@ -18,10 +18,10 @@ alias pauu='sudo apt update && sudo apt upgrade && sudo apt autoremove'
 alias cmmi='./configure && make && sudo make install'
 
 # dnf-based
-alias pdq='apt search'
-alias pdi='sudo apt install'
-alias pdr='sudo apt remove'
-alias pduu='sudo apt update && sudo apt upgrade && sudo apt autoremove'
+alias pdq='dnf search'
+alias pdi='sudo dnf install'
+alias pdr='sudo dnf remove'
+alias pduu='sudo dnf update && sudo dnf upgrade'
 alias cmmi='./configure && make && sudo make install'
 
 # zoxide
