@@ -2,17 +2,9 @@
 
 # shellcheck disable=SC2139,SC2015,SC2142,SC2154
 
-# ls
-alias ll='ls -lah --color=auto'
-alias la='ls -A --color=auto'
-alias l='ls -CF --color=auto'
-alias sll='sudo ls -la'
-
 # grep
 alias grep="egrep --line-buffered --color=auto"
 alias grepv="egrep --line-buffered --color=auto -v"
-
-
 
 # Alias config: File manipulation
 alias rm='rm -i'
